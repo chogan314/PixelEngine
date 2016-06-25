@@ -76,7 +76,12 @@ public class Bitmap
 	 * @param y
 	 */
 	public void drawPixel(int x, int y)
-	{		
+	{
+		if (x < 0 || x >= width || y < 0 || y >= height)
+		{
+			return;
+		}
+		
 		int index = x + y * width;
 
 		components[index] = brushColor;

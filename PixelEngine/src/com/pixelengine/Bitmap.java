@@ -11,6 +11,8 @@ public class Bitmap
 	private int brushColor;
 
 	/**
+	 * Create new bitmap.
+	 * 
 	 * @param width
 	 * @param height
 	 */
@@ -24,9 +26,12 @@ public class Bitmap
 	}
 
 	/**
-	 * @param r
-	 * @param g
-	 * @param b
+	 * Set color to fill with when clear() is called.
+	 * Very high overhead, avoid calling in main loop.
+	 * 
+	 * @param r		red component (0 - 255)
+	 * @param g		green component(0 - 255)
+	 * @param b		blue component(0 - 255)
 	 */
 	public void setClearColor(int r, int g, int b)
 	{
@@ -41,7 +46,7 @@ public class Bitmap
 	}
 
 	/**
-	 * 
+	 * Fill with color provided by setClearColor().
 	 */
 	public void clear()
 	{
@@ -49,9 +54,11 @@ public class Bitmap
 	}
 
 	/**
-	 * @param r
-	 * @param g
-	 * @param b
+	 * Set brush color to (r, g, b).
+	 * 
+	 * @param r		red component (0 - 255)
+	 * @param g		green component(0 - 255)
+	 * @param b		blue component(0 - 255)
 	 */
 	public void setBrushColor(int r, int g, int b)
 	{
@@ -62,6 +69,9 @@ public class Bitmap
 	}
 
 	/**
+	 * Draw a single pixel of set brush color at (x, y).
+	 * Top left corner is (0, 0).
+	 * 
 	 * @param x
 	 * @param y
 	 */
@@ -73,6 +83,8 @@ public class Bitmap
 	}
 
 	/**
+	 * Copy components to int array.
+	 * 
 	 * @param dest
 	 */
 	public void copyToArray(int[] dest)
@@ -81,7 +93,7 @@ public class Bitmap
 	}
 
 	/**
-	 * @return
+	 * @return width of bitmap in pixels
 	 */
 	public int getWidth()
 	{
@@ -89,7 +101,7 @@ public class Bitmap
 	}
 
 	/**
-	 * @return
+	 * @return height of bitmap in pixels
 	 */
 	public int getHeight()
 	{

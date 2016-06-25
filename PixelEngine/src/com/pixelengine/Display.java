@@ -67,25 +67,25 @@ public class Display extends Canvas
 	}
 
 	/**
-	 * @return
+	 * @return backing bitmap
 	 */
 	public Bitmap getFrameBuffer()
 	{
 		return frameBuffer;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.Component#getWidth()
+	/**
+	 * @return display width
 	 */
-	public int getWidth()
+	public int getDisplayWidth()
 	{
 		return width;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.Component#getHeight()
+	/**
+	 * @return display height
 	 */
-	public int getHeight()
+	public int getDisplayHeight()
 	{
 		return height;
 	}

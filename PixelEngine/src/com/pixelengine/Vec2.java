@@ -7,7 +7,8 @@ public class Vec2
 	private float y;
 
 	/**
-	 * 
+	 * Create a new immutable 2D vector.
+	 * Initializes to (0, 0)
 	 */
 	public Vec2()
 	{
@@ -16,6 +17,8 @@ public class Vec2
 	}
 
 	/**
+	 * Create a new immutable 2D vector.
+	 * 
 	 * @param x
 	 * @param y
 	 */
@@ -26,6 +29,8 @@ public class Vec2
 	}
 
 	/**
+	 * Create a new immutable 2D vector.
+	 * 
 	 * @param other
 	 */
 	public Vec2(Vec2 other)
@@ -36,7 +41,7 @@ public class Vec2
 
 	/**
 	 * @param other
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 add(Vec2 other)
 	{
@@ -45,7 +50,7 @@ public class Vec2
 
 	/**
 	 * @param other
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 sub(Vec2 other)
 	{
@@ -54,7 +59,7 @@ public class Vec2
 
 	/**
 	 * @param other
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 mult(Vec2 other)
 	{
@@ -63,7 +68,7 @@ public class Vec2
 
 	/**
 	 * @param other
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 div(Vec2 other)
 	{
@@ -73,7 +78,7 @@ public class Vec2
 	/**
 	 * @param x
 	 * @param y
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 add(float x, float y)
 	{
@@ -83,7 +88,7 @@ public class Vec2
 	/**
 	 * @param x
 	 * @param y
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 sub(float x, float y)
 	{
@@ -93,7 +98,7 @@ public class Vec2
 	/**
 	 * @param x
 	 * @param y
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 mult(float x, float y)
 	{
@@ -103,7 +108,7 @@ public class Vec2
 	/**
 	 * @param x
 	 * @param y
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 div(float x, float y)
 	{
@@ -112,7 +117,7 @@ public class Vec2
 
 	/**
 	 * @param val
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 add(float val)
 	{
@@ -121,7 +126,7 @@ public class Vec2
 
 	/**
 	 * @param val
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 sub(float val)
 	{
@@ -130,7 +135,7 @@ public class Vec2
 
 	/**
 	 * @param val
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 div(float val)
 	{
@@ -139,7 +144,7 @@ public class Vec2
 
 	/**
 	 * @param val
-	 * @return
+	 * @return new Vec2
 	 */
 	public Vec2 mult(float val)
 	{
@@ -147,16 +152,24 @@ public class Vec2
 	}
 	
 	/**
-	 * @return
+	 * @return normalized copy of Vec2
 	 */
 	public Vec2 normalize()
 	{
 		float len = len();
 		return new Vec2(x / len, y / len);
 	}
+	
+	/**
+	 * @return copy of Vec2
+	 */
+	public Vec2 cpy()
+	{
+		return new Vec2(x, y);
+	}
 
 	/**
-	 * @return
+	 * @return length of Vec2
 	 */
 	public float len()
 	{
@@ -164,7 +177,7 @@ public class Vec2
 	}
 
 	/**
-	 * @return
+	 * @return length of Vec2 squared
 	 */
 	public float len2()
 	{
@@ -173,7 +186,7 @@ public class Vec2
 
 	/**
 	 * @param other
-	 * @return
+	 * @return dot product of Vec2 and other
 	 */
 	public float dot(Vec2 other)
 	{
@@ -181,7 +194,7 @@ public class Vec2
 	}
 
 	/**
-	 * @return
+	 * @return x component
 	 */
 	public float getX()
 	{
@@ -189,7 +202,7 @@ public class Vec2
 	}
 
 	/**
-	 * @return
+	 * @return y component
 	 */
 	public float getY()
 	{

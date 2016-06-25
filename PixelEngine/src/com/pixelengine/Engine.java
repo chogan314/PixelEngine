@@ -9,6 +9,8 @@ public class Engine
 	private Context context;
 	
 	/**
+	 * Create a new engine.
+	 * 
 	 * @param width
 	 * @param height
 	 */
@@ -24,10 +26,16 @@ public class Engine
 	}
 	
 	/**
-	 * 
+	 * Start the engine.
+	 * Context must be given using registerContext(Context context) before engine can be run.
 	 */
 	public void run()
 	{
+		if (context == null)
+		{
+			throw new NullPointerException("Engine must have a context before it can run.");
+		}
+		
 		float updateTime = 0;
 		float frameTime = 0;
 		int frames = 0;
@@ -66,6 +74,8 @@ public class Engine
 	}
 	
 	/**
+	 * Register context. Must be called before run().
+	 * 
 	 * @param context
 	 */
 	public void registerContext(Context context)
@@ -74,6 +84,8 @@ public class Engine
 	}
 	
 	/**
+	 * Register input handler. Optionally called before run().
+	 * 
 	 * @param handler
 	 */
 	public void registerInputHandler(InputHandler handler)
@@ -82,7 +94,7 @@ public class Engine
 	}
 	
 	/**
-	 * @return
+	 * @return backing display
 	 */
 	public Display getDisplay()
 	{
@@ -90,6 +102,8 @@ public class Engine
 	}
 	
 	/**
+	 * Toggle FPS display in console. Don't call after run().
+	 * 
 	 * @param show
 	 */
 	public void showFPS(boolean show)

@@ -5,24 +5,30 @@ public abstract class Context
 	protected int width;
 	protected int height;
 	
-	protected Graphics graphics;
+	protected Bitmap graphics;
 	
 	/**
-	 * @param display
+	 * Create a new context with size determined by given display.
+	 * Use the display of some Engine as an argument.
+	 * 
+	 * @param display		display of engine
 	 */
 	public Context(Display display)
 	{
-		width = display.getWidth();
-		height = display.getHeight();
-		graphics = new Graphics(display.getFrameBuffer());
+		width = display.getDisplayWidth();
+		height = display.getDisplayHeight();
+		graphics = display.getFrameBuffer();
 	}
 	
 	/**
-	 * @param delta
+	 * Update game logic.
+	 * 
+	 * @param delta	time since last update in seconds
 	 */
 	public abstract void update(float delta);
+	
 	/**
-	 * 
+	 * Draw using graphics object.
 	 */
 	public abstract void render();
 }

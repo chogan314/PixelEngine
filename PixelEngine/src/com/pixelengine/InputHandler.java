@@ -3,12 +3,12 @@ package com.pixelengine;
 public interface InputHandler
 {
 	/**
-	 * @param key
+	 * @param key	the keycode value: keycodes in Input class
 	 */
 	public void onKeyDown(int key);
 	
 	/**
-	 * @param key
+	 * @param key	the keycode value: keycodes in Input class
 	 */
 	public void onKeyUp(int key);
 	

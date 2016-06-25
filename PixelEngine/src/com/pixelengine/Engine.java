@@ -8,6 +8,10 @@ public class Engine
 	private Input input;
 	private Context context;
 	
+	/**
+	 * @param width
+	 * @param height
+	 */
 	public Engine(int width, int height)
 	{
 		display = new Display(width, height);
@@ -19,6 +23,9 @@ public class Engine
 		display.requestFocus();
 	}
 	
+	/**
+	 * 
+	 */
 	public void run()
 	{
 		float updateTime = 0;
@@ -58,21 +65,33 @@ public class Engine
 		}
 	}
 	
+	/**
+	 * @param context
+	 */
 	public void registerContext(Context context)
 	{
 		this.context = context;
 	}
 	
+	/**
+	 * @param handler
+	 */
 	public void registerInputHandler(InputHandler handler)
 	{
 		input.registerInputHandler(handler);
 	}
 	
+	/**
+	 * @return
+	 */
 	public Display getDisplay()
 	{
 		return display;
 	}
 	
+	/**
+	 * @param show
+	 */
 	public void showFPS(boolean show)
 	{
 		showFPS = show;

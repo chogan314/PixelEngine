@@ -209,7 +209,7 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 	}
 	
 	// mouse moved events
-	public class PMouseMovedEvent extends PInputEvent
+	private class PMouseMovedEvent extends PInputEvent
 	{
 		private int x;
 		private int y;
@@ -238,6 +238,9 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 	private Set<Integer> keys;
 	private Set<Integer> mouseButtons;
 	
+	/**
+	 * 
+	 */
 	public Input()
 	{
 		inputEvents = new LinkedList<PInputEvent>();
@@ -246,11 +249,17 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 		mouseButtons = new HashSet<Integer>();
 	}
 
+	/**
+	 * @param handler
+	 */
 	public void registerInputHandler(InputHandler handler)
 	{
 		this.handler = handler;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseMotionListener#mouseDragged(java.awt.event.MouseEvent)
+	 */
 	@Override
 	public void mouseDragged(MouseEvent event)
 	{
@@ -260,6 +269,9 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseMotionListener#mouseMoved(java.awt.event.MouseEvent)
+	 */
 	@Override
 	public void mouseMoved(MouseEvent event)
 	{
@@ -269,6 +281,9 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseWheelListener#mouseWheelMoved(java.awt.event.MouseWheelEvent)
+	 */
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent event)
 	{
@@ -278,24 +293,36 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
+	 */
 	@Override
 	public void mouseClicked(MouseEvent event)
 	{
 		// do nothing
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
+	 */
 	@Override
 	public void mouseEntered(MouseEvent event)
 	{
 		// do nothing
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
+	 */
 	@Override
 	public void mouseExited(MouseEvent event)
 	{
 		// do nothing
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
+	 */
 	@Override
 	public void mousePressed(MouseEvent event)
 	{
@@ -305,6 +332,9 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
+	 */
 	@Override
 	public void mouseReleased(MouseEvent event)
 	{
@@ -314,6 +344,9 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyPressed(KeyEvent event)
 	{
@@ -323,6 +356,9 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyReleased(KeyEvent event)
 	{
@@ -332,12 +368,18 @@ public class Input implements KeyListener, MouseListener, MouseWheelListener, Mo
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyTyped(KeyEvent event)
 	{
 		// do nothing
 	}
 	
+	/**
+	 * 
+	 */
 	public void flushInputEvents()
 	{
 		inputEventsOut.clear();

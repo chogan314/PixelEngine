@@ -22,6 +22,10 @@ public class Display extends Canvas
 	private final BufferStrategy bufferStrategy;
 	private final Graphics graphics;
 
+	/**
+	 * @param width
+	 * @param height
+	 */
 	public Display(int width, int height)
 	{
 		this.width = width;
@@ -52,6 +56,9 @@ public class Display extends Canvas
 		graphics = bufferStrategy.getDrawGraphics();
 	}
 
+	/**
+	 * 
+	 */
 	public void SwapBuffers()
 	{
 		frameBuffer.copyToArray(displayComponents);
@@ -59,16 +66,25 @@ public class Display extends Canvas
 		bufferStrategy.show();
 	}
 
+	/**
+	 * @return
+	 */
 	public Bitmap getFrameBuffer()
 	{
 		return frameBuffer;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.Component#getWidth()
+	 */
 	public int getWidth()
 	{
 		return width;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.Component#getHeight()
+	 */
 	public int getHeight()
 	{
 		return height;

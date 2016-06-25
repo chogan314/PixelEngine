@@ -7,6 +7,9 @@ public abstract class Context
 	
 	protected Graphics graphics;
 	
+	/**
+	 * @param display
+	 */
 	public Context(Display display)
 	{
 		width = display.getWidth();
@@ -14,6 +17,12 @@ public abstract class Context
 		graphics = new Graphics(display.getFrameBuffer());
 	}
 	
+	/**
+	 * @param delta
+	 */
 	public abstract void update(float delta);
+	/**
+	 * 
+	 */
 	public abstract void render();
 }

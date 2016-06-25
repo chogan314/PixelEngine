@@ -10,6 +10,10 @@ public class Bitmap
 
 	private int brushColor;
 
+	/**
+	 * @param width
+	 * @param height
+	 */
 	public Bitmap(int width, int height)
 	{
 		this.width = width;
@@ -19,6 +23,11 @@ public class Bitmap
 		clearComponents = new int[width * height];
 	}
 
+	/**
+	 * @param r
+	 * @param g
+	 * @param b
+	 */
 	public void setClearColor(int r, int g, int b)
 	{
 		for (int i = 0; i < clearComponents.length; i++)
@@ -31,11 +40,19 @@ public class Bitmap
 		}
 	}
 
+	/**
+	 * 
+	 */
 	public void clear()
 	{
 		System.arraycopy(clearComponents, 0, components, 0, components.length);
 	}
 
+	/**
+	 * @param r
+	 * @param g
+	 * @param b
+	 */
 	public void setBrushColor(int r, int g, int b)
 	{
 		brushColor = -16777216;
@@ -44,6 +61,10 @@ public class Bitmap
 		brushColor += ((r & 0xff) << 16);
 	}
 
+	/**
+	 * @param x
+	 * @param y
+	 */
 	public void drawPixel(int x, int y)
 	{		
 		int index = x + y * width;
@@ -51,16 +72,25 @@ public class Bitmap
 		components[index] = brushColor;
 	}
 
+	/**
+	 * @param dest
+	 */
 	public void copyToArray(int[] dest)
 	{
 		System.arraycopy(components, 0, dest, 0, dest.length);
 	}
 
+	/**
+	 * @return
+	 */
 	public int getWidth()
 	{
 		return width;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getHeight()
 	{
 		return height;
